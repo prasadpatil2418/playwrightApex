@@ -31,7 +31,7 @@ exports.FeaturedToolPage = class FeaturedToolPage{
 
         expect(productCardCount).toBe(configElement.expectedProductDisplayed)
 
-        for(item=0; item<productCardCount; item++){
+        for(let item=0; item<productCardCount; item++){
 
             //verify Image
             const productImage = this.page.locator(fTObject.productcardImagelocator).nth(item);
@@ -42,15 +42,17 @@ exports.FeaturedToolPage = class FeaturedToolPage{
             await expect(productTitle).toBeVisible()
             const iListTitle = await productTitle.textContent()
             console.log(iListTitle)
-            listOfProductTitle.push(productTitle)
+            listOfProductTitle.push(iListTitle)
+            expect(configElement.productTitles[i].includes(listOfProductTitle[i])).toBeTruthy()
            
 
              //verify Subtitle
              const productSubtitle = this.page.locator(fTObject.productcardSubtitleLocator).nth(item);
              await expect(productSubtitle).toBeVisible();
-             const iListSubtitle = await productTitle.textContent()
+             const iListSubtitle = await productSubtitle.textContent()
              console.log(iListSubtitle)
              listOfProductSubtitle.push(iListSubtitle)
+             expect(configElement.productSubtitles[i].includes(listOfProductSubtitle[i])).toBeTruthy()
 
               //verify Link
               const productLink = this.page.locator(fTObject.productcardLinkLocator).nth(item);
@@ -62,13 +64,19 @@ exports.FeaturedToolPage = class FeaturedToolPage{
             await productLink.click({trial: true})
 
             //verify the links captured
-             for (let i = 0; i< configElement.expectedProductUrl.count; i++){
-            expect(configElement.expectedProductUrl[i].includes(listOfProductlink[i])).toBeTruthy()
+             
+            expect(configElement.expectedProductUrl[item].includes(listOfProductlink[item])).toBeTruthy()
            
-            }
+        }      
+    }
 
-        }
-        
+    //method3
+
+    async heroBannerElements(){
+
+        await this.baseMethod.testImageTitleSubTitle( fTObject.bannerImageLocator,
+                                                          fTObject.bannerTitleLocator,configElement.expectedBannerTitle,
+                                                        fTObject.bannerSubtitleLocator, configElement.expectedBannerSubtitle)
     }
 
 }

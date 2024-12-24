@@ -150,7 +150,7 @@ export const expectedFilterElementsToolCategory = ['Auto Specialty','Ads','Broch
 'News','Pliers','Press Releases','Promotions','Pry Bars','Ratchets & Sockets','Screwdrivers & Nutdrivers','Shop Equipment','Social Media',
 'Sockets','Striking & Struck','Tethered Products','Tools & Products','Tool Sets','Tool Storage','Torque Products','Twitter','Wrenches','Youtube']
 
-//*******************************************************          Resources Page            ***************************************************************
+//*******************************************************          Featured Tool Page            ***************************************************************
 
 
 //used: method2
@@ -164,3 +164,49 @@ export const boltBiterExtractionToolsPageUrl =  "https://dev-www.gearwrench.com/
 
 export const expectedProductUrl = [diagnosticPageUrl,megamodPageUrl,modularToolSetsPageUrl,autoShopsEquipmentPageUrl,xP120PrductPageUrl,
     t90ProductPageUrl,storageProductsPageUrl,boltBiterExtractionToolsPageUrl]
+
+ export const productTitles = ['Diagnostics', 'MEGAMOD Master Mechanics Tool Sets' , 'Modular Tool Sets', 'Auto Shop Equipment', '120XP Products', '90T Products' , 'Storage Products', 'Bolt Biter Extraction Tools'  ]
+ 
+export const productSubtitles = ['Diagnostics that break all the rules.', 'Tool sets built around what you need and want.' , 'A minute spent organizing is an hour earned. Let us organize for you.', 'Designed for speed and efficiency around the shop.', 'Access made effortless.', 'Proven by performance.', 'Built for the day-to-day needs of professional tool users.', "There's a Bolt Biter tool to turn every stuck fastener."]
+
+//used: method3
+export const expectedBannerTitle = "Featured Tools"
+export const expectedBannerSubtitle = "From hand tools to storage, upgrade your tool box with our most innovative products for the speed, strength, and access you need to forge ahead!"
+
+
+
+//*******************************************************          Bolt Biter Extraction Tools Page            ***************************************************************
+
+//used: method2
+
+export const expectedBannerTitleBBET = "Bolt Biter Extraction Tools"
+export const expectedBannerSubtitleBBET = "High-quality performance, speed, and strength — GEARWRENCH tools help industry professionals and self-taught makers forge ahead."
+export const expectedUrlBBET = "https://dev-www.gearwrench.com/featured-tools/bolt-biter-extraction-tools#SHOP-NOW"
+
+//used: method3
+
+export const expectedboltBiterFeaturesTitle = "Bolt Biter Features"
+export const expectedboltBiterFeaturesText = "A stuck bolt or stubborn"
+
+//used: method4
+
+export const expectedboltBiterFeaturesCard = 3
+
+//used: method5
+
+export const expectedboltBiterBrochureTitle = "BOLT BITER BROCHURE"
+export const expectedboltBiterBrochureText = "With Bolt Biter Sockets, Bolt Biter Lug Nut Extractors, Bolt Biter Wrench Inserts, Bolt Biter Nut Drivers, Bolt Biter Impact Screwdrivers, and Bolt Biter Screw Extraction Sets—stubborn fasteners don’t stand a chance. Explore our Bolt Biter brochure for full details on each tool in the collection."
+export const expectedboltBiterUrl = "https://dev-www.gearwrench.com/sites/gearwrench/files/pim_pdfs/GW_BoltBiter_Fly.pdf"
+
+//used: method6
+export const expectedboltBiterCardDisplayed = 6
+
+export const boltBiterSocketSetsUrl = "https://www.gearwrench.com/all-tools/auto-specialty/extraction-tools?field_product_specifications_target_id%5B0%5D=190991&field_product_specifications_target_id%5B1%5D=247951&field_set_value=1&sort_by=field_long_description_value&sort_order=ASC"
+export const boltBiterLugNutExtractorsUrl  = "https://www.gearwrench.com/all-tools/auto-specialty/extraction-tools?field_product_specifications_target_id%5B0%5D=189116&field_product_specifications_target_id%5B1%5D=202066&field_product_specifications_target_id%5B2%5D=247951&field_set_value=All&sort_by=field_long_description_value&sort_order=ASC"
+export const boltBiterWrenchInsertSetsUrl = "https://www.gearwrench.com/all-tools/auto-specialty/extraction-tools?field_product_specifications_target_id%5B0%5D=263361&field_set_value=All&sort_by=field_long_description_value&sort_order=ASC"
+export const boltBiterImpactNutExtractorDriverSetsUrl = "https://www.gearwrench.com/all-tools/auto-specialty/extraction-tools?field_product_specifications_target_id%5B0%5D=257861&field_set_value=All&sort_by=field_long_description_value&sort_order=ASC"
+export const boltBiterImpactScrewExtractorSetsUrl = "https://www.gearwrench.com/all-tools/auto-specialty/extraction-tools?field_product_specifications_target_id%5B0%5D=257771&field_set_value=All&sort_by=field_long_description_value&sort_order=ASC"
+export const boltBiterImpactScrewDriversUrl = "https://www.gearwrench.com/all-tools/auto-specialty/extraction-tools?field_product_specifications_target_id%5B0%5D=248251&field_set_value=All&sort_by=field_long_description_value&sort_order=ASC"
+
+export const expectedBoltBiterCardUrl = [boltBiterSocketSetsUrl,boltBiterLugNutExtractorsUrl,boltBiterWrenchInsertSetsUrl,
+    boltBiterImpactNutExtractorDriverSetsUrl, boltBiterImpactScrewExtractorSetsUrl, boltBiterImpactScrewDriversUrl]

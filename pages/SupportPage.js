@@ -21,14 +21,18 @@ exports.SupportPage = class SupportPage{
      //method 2  **************************************************************************************************************************************
      async heroBannerElements(){
         //check if the banner is visible
-        await expect(this.page.locator(hPgObject.heroBannerBackGroundImageLocatorSupport)).toBeVisible()
+    //     await expect(this.page.locator(hPgObject.heroBannerBackGroundImageLocatorSupport)).toBeVisible()
 
-        //validate Heading and subtext
-        await expect(this.page.locator(hPgObject.heroBannerHeadingLocatorSupport)).toHaveText(configElement.expectedHeroBannerHeadingSupport)
-        await expect(this.page.locator(hPgObject.heroBannerSubTextLocatorSupport)).toHaveText(configElement.expectedHeroBannerSubtextSupport)
-    }
+    //     //validate Heading and subtext
+    //     await expect(this.page.locator(hPgObject.heroBannerHeadingLocatorSupport)).toHaveText(configElement.expectedHeroBannerHeadingSupport)
+    //     await expect(this.page.locator(hPgObject.heroBannerSubTextLocatorSupport)).toHaveText(configElement.expectedHeroBannerSubtextSupport)
+    await this.baseMethod.testImageTitleSubTitle(hPgObject.heroBannerBackGroundImageLocatorSupport,
+                        hPgObject.heroBannerHeadingLocatorSupport,configElement.expectedHeroBannerHeadingSupport, 
+                        hPgObject.heroBannerSubTextLocatorSupport, configElement.expectedHeroBannerSubtextSupport)
 
-    //method 3 ************************************************************************************************************************************************
+}
+
+    //method 3 **************************************************************************************************  **********************************************
     async checkOutOurResources(){
         //check title and subtitle being displayed:
         await expect(this.page.locator(hPgObject.checkOutOurResourcesTitleLocator)).toBeVisible()
