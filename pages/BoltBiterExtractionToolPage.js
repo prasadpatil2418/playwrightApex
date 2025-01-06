@@ -65,9 +65,34 @@ exports.BoltBiterExtractionToolPage = class BoltBiterExtractionToolPage{
  //method 7
     async videoPlayerFunctionalityCheckBoltBiter(){
 
-        await this.baseMethod.videoPlayerFunctionalityCheckBoltBiter(bbetPgObject.boltBiterYouTubeIframeLocator,bbetPgObject.boltBiterYouTubeVideoPlayLocator,
-              bbetPgObject.boltBiterYouTubeVideoPauseLocator, bbetPgObject.boltBiterYouTubeVideoMuteLocator, bbetPgObject.boltBiterYouTubeVideoUnmuteLocator,
-              bbetPgObject.boltBiterYouTubeVideoFullScreenLocator,bbetPgObject.boltBiterYouTubeVideoExitFullScreenLocator)
+        const iframe = this.page.frame ({url:'https://www.youtube.com/embed/4U3R6xwTVVE?rel=0&autoplay=0&enablejsapi=1&modestbranding=1'})
+        const playButton = iframe.locator('//button[@title=\'Play (k)\']')
+        await expect(playButton).toBeVisible()
+        await playButton.click();
+        await this.page.waitForTimeout(2000);
+        const pauseButton = iframe.locator("button[aria-label='Pause keyboard shortcut k']");
+        await expect(pauseButton).toBeVisible();
+        await pauseButton.click();
+        const muteButton =  iframe.locator("button[aria-label='Mute keyboard shortcut m']");
+        //const muteButton =  iframe.locator("button[title='Mute (m)']");
+        await expect(muteButton).toBeVisible();
+        await muteButton.click();
+        await this.page.waitForTimeout(2000);
+        const unmuteButton =  iframe.locator("button[aria-label='Unmute keyboard shortcut m']");
+        //const unmuteButton =  iframe.locator("button[title='Unmute (m)']");
+        await expect(unmuteButton).toBeVisible();
+        await unmuteButton.click();
+        const FullScreenButton = iframe.locator("button[aria-label='Full screen keyboard shortcut f']")
+        //const FullScreenButton = iframe.locator("button[title='Full screen (f)']")
+        await expect(FullScreenButton).toBeVisible();
+        await FullScreenButton.click();
+        await this.page.waitForTimeout(2000);
+        const exitFullScreenButton = iframe.locator("button[aria-label='Exit full screen keyboard shortcut f']")
+        //const exitFullScreenButton = iframe.locator("button[title='Exit full screen (f)']")
+        await expect(exitFullScreenButton).toBeVisible();
+        await exitFullScreenButton.click();
+        await page.pause();
     }
-    
+
+
 }

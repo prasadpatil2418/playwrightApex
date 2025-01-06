@@ -210,3 +210,64 @@ export const boltBiterImpactScrewDriversUrl = "https://www.gearwrench.com/all-to
 
 export const expectedBoltBiterCardUrl = [boltBiterSocketSetsUrl,boltBiterLugNutExtractorsUrl,boltBiterWrenchInsertSetsUrl,
     boltBiterImpactNutExtractorDriverSetsUrl, boltBiterImpactScrewExtractorSetsUrl, boltBiterImpactScrewDriversUrl]
+
+
+//*******************************************************         Where To Buy Page            ***************************************************************
+
+export const amazonUrl= "https://www.amazon.com/stores/page/05C2D480-07A8-4DDE-B596-946220505A40?ingress=0&visitId=c6bce823-ca40-4f54-8f5e-b234f19a6283&tag=price16981-20&ascsubtag=wtbs_6773af00cff8c9908401de12"
+export const homedepotUrl = "https://www.homedepot.com/b/GEARWRENCH/N-5yc1vZr9s?clickid=TdI3VAQF3xyKUFmTCh0mVTYkUkCSv423EzMh1A0&irgwc=1&cm_mmc=afl-ir-78091-456723-"
+export const acmetoolsUrl = "https://www.acmetools.com/gearwrench.html?irclickid=T9hTTTQFjxyKWbx0dM0W2VUDUkCSv43%3AEzMh1A0&irgwc=1&utm_campaign=PriceSpider&utm_channel=Affiliates&utm_source=impact&utm_medium=affiliate"
+export const contractortoolUrl = "https://www.contractortool.com/pages/gearwrench"
+export const napaonlineUrl ="https://www.napaonline.com/en/search?text=gearwrench&referer=v2&cid=affiliate_conversions_FlexOffers.com-1635394_rakuten_brand_05/2023&ranMID=50383&ranEAID=PPkX79%2Fc*b0&ranSiteID=PPkX79_c.b0-zxVELRytTDxMLK4p32I8WQ"
+export const ohiopowertoolUrl = "https://www.ohiopowertool.com/brands/gearwrench-tools?psrid=wtbs_6773b004cff8c9908401df50"
+export const graingerUrl = "https://www.grainger.com/search?searchQuery=gearwrench&searchBar=true"
+export const mscdirectUrl = "https://www.mscdirect.com/products/gearwrench-brand?cjdata=MXxOfDB8WXww&rdrct=gearwrench&CID=af_cj&utm_medium=&utm_source=aff&cjevent=6d716b9bc75411ef83712e260a18b8fc"
+export const fastenalUrl = "https://www.fastenal.com/product?query=gearwrench&fsi=1"
+export const summitracingUrl ="https://www.summitracing.com/search/brand/gearwrench?GroupBy=ProductName"
+export const toolupUrl ="https://toolup.com/collections/gearwrench"
+export const zoroUrl = "https://www.zoro.com/b/GEARWRENCH/?cjdata=MXxOfDB8WXww&websiteID=8906066&cjevent=d629e6f4c75411ef822d08850a18b8fa&utm_source=CJ&utm_medium=affiliate&utm_term=wtbs_6773b13bd82a206b9f72d6a9&utm_content=12738330&utm_campaign=1634220"
+
+export const  actualShoppingUrl =[amazonUrl, homedepotUrl, acmetoolsUrl, contractortoolUrl, napaonlineUrl, ohiopowertoolUrl,
+    graingerUrl, mscdirectUrl, fastenalUrl, summitracingUrl, toolupUrl, zoroUrl ]
+
+export const expPriceSpiderUrl ="https://www.pricespider.com/terms-conditions/"
+
+
+//*******************************************************        All Tool Page            ***************************************************************
+
+//Banner Element
+ export const expBannerTitleAllTool = "All Tools"
+ export const expBannerTextAllTool = "Find the right tool for your next project. Shop the fundamentals, explore specialty automotive and industrial tools, or find storage options for your collection."
+
+ //shop By Industry
+ export const shopByIndustryUrl ="https://dev-www.gearwrench.com/all-tools/tools-industry"
+ 
+//Auto Specialty
+export const bodyBrakeWheelToolsUrl="https://dev-www.gearwrench.com/all-tools/auto-specialty/body-brake-wheel-tools"
+export const engineToolsUrl="https://dev-www.gearwrench.com/all-tools/auto-specialty/engine-tools"
+export const extractionToolsUrl="https://dev-www.gearwrench.com/all-tools/auto-specialty/extraction-tools"
+export const inspectionToolsUrl= "https://dev-www.gearwrench.com/all-tools/auto-specialty/inspection-tools"
+
+export const expAutoSpecialityCardUrl =[bodyBrakeWheelToolsUrl, engineToolsUrl, extractionToolsUrl, inspectionToolsUrl]
+
+
+//*******************************************************        All Tool Page            ***************************************************************
+
+//Banner Element
+export const expBannerTitleToolsByindustry = "Tools by Industry"
+export const expBannerTextToolsByindustry = "You don't settle for anything less than the highest professional quality.  That's why we're built for techs who crave more.  Find the best tools for your job when you shop tools by industry."
+
+//industry sector
+
+export const aerospaceIndustryUrl="https://dev-www.gearwrench.com/all-tools/aerospace"
+export const agricultureIndustryUrl="https://dev-www.gearwrench.com/all-tools/agriculture"
+export const automotiveIndustryUrl="https://dev-www.gearwrench.com/all-tools/automotive"
+export const dieselIndustryUrl= "https://dev-www.gearwrench.com/all-tools/diesel"
+export const energyIndustryUrl="https://dev-www.gearwrench.com/all-tools/energy"
+export const industrialIndustryUrl="https://dev-www.gearwrench.com/all-tools/industrial"
+export const technicianEducationIndustryUrl="https://dev-www.gearwrench.com/all-tools/technician-education"
+export const transportationIndustryUrl= "https://dev-www.gearwrench.com/all-tools/transportation"
+
+export const expIndustryUrl =[aerospaceIndustryUrl, agricultureIndustryUrl, automotiveIndustryUrl, dieselIndustryUrl,
+    energyIndustryUrl, industrialIndustryUrl, technicianEducationIndustryUrl, transportationIndustryUrl]
+

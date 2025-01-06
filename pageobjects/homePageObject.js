@@ -139,19 +139,3 @@ export const signUpSuccessTextSupport = 'Thanks for submitting the'
 
 
 
-//*******************************************************          Resources Page            ***************************************************************
-
-//used: method2
-export const heroBannerBackGroundImageLocatorResources =  '#paragraph-8471 picture'
-export const heroBannerHeadingLocatorResources = "//h1[normalize-space()='Resources']"
-export const heroBannerSubTextLocatorResources = ".field.field--name-field-attribution.field--type-string.field--label-hidden.field__item"
-
-
-//used: method3
-export const contentTypeFilterLocator = "div[id='edit-media-type'] label[class='option']"
-
-//used: method4
-export const toolCategoryFilterLocator ='#edit-field-category--wrapper'
-
-//used: method5
-export const categoryFilterLocator = "div[id='edit-field-category'] label[class='option']"

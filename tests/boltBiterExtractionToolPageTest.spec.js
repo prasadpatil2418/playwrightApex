@@ -38,7 +38,14 @@ test.describe('Browse all Bolt Biter Extraction Tools page elements, including h
         await page.close();
 
     });
+    test('verify VideoPlayer section', async({page})=>{
+     
+        const boltBiterExtractionToolP = new BoltBiterExtractionToolPage(page);
+        await boltBiterExtractionToolP.openPageOnBrowsers();  //launch the site
+        await boltBiterExtractionToolP.videoPlayerFunctionalityCheckBoltBiter();   
+        await page.close();
 
+    });
 
    
 })

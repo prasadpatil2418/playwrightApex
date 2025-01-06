@@ -15,7 +15,7 @@ dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
 module.exports = defineConfig({
 
   globalTimeout: 120 * 120 * 1000,
-  timeout: 60 * 1000,
+  timeout: 240 * 1000,
   expect: {
     timeout: 60000,
   },

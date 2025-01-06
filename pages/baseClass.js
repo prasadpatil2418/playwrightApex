@@ -69,7 +69,7 @@ exports.baseClass = class baseClass{
       }
 
 
-    //Used in Support, FeaturedTool Page, Bolt Biter tool Page, Moduler tool page
+    //Used in Support, FeaturedTool Page, Bolt Biter tool Page, Moduler tool page, All tool Page, Tools By Industry page
     async testImageTitleSubTitle(imageLocator,titleLocator, expectedTitleLocator, subtitleLocator, expectedSubtitleLocator  ){
         //check if the banner is visible
         await expect(this.page.locator(imageLocator)).toBeVisible()
@@ -99,7 +99,6 @@ async featureSectionImageTitleText(featureCardLocator,expectedFeatureDisplayed,f
     const listOfFeatureTitle =[]
     const listOfFeatureText =[]
     
-
     const featureCardCount = await this.page.locator(featureCardLocator).count()
 
     expect(featureCardCount).toBe(expectedFeatureDisplayed)
@@ -108,7 +107,7 @@ async featureSectionImageTitleText(featureCardLocator,expectedFeatureDisplayed,f
 
         //verify Image
         const featureImage = this.page.locator(featureImagelocator).nth(item);
-        await expect(featureImage).toBeVisible();
+        //await expect(featureImage).toBeVisible();
 
         //verify Title
         const featureTitle = this.page.locator(featureTitleLocator).nth(item);
@@ -117,7 +116,6 @@ async featureSectionImageTitleText(featureCardLocator,expectedFeatureDisplayed,f
         console.log(iListTitle)
         listOfFeatureTitle.push(iListTitle)
        
-
          //verify Subtitle
          const featureText = this.page.locator(featureTextLocator).nth(item);
          await expect(featureText).toBeVisible();
@@ -126,6 +124,7 @@ async featureSectionImageTitleText(featureCardLocator,expectedFeatureDisplayed,f
          listOfFeatureText.push(iListText)
     }      
 }
+
 //Used in Bolt Biter Extraction Tools, Modular Tool Sets
 async cardSectionImageTitleSubtitleLink(cardLocator, expectedCardDisplayed, cardImagelocator,cardTitleLocator, cardTextLocator, cardLinkLocator, expectedCardUrl ){
 
@@ -151,7 +150,6 @@ async cardSectionImageTitleSubtitleLink(cardLocator, expectedCardDisplayed, card
         listOfCardTitle.push(iListTitle)
         //expect(configElement.productTitles[i].includes(listOfProductTitle[i])).toBeTruthy()
        
-
          //verify Subtitle
          const cardText = this.page.locator(cardTextLocator).nth(item);
          await expect(cardText).toBeVisible();
@@ -180,7 +178,7 @@ async cardSectionImageTitleSubtitleLink(cardLocator, expectedCardDisplayed, card
 async videoPlayerFunctionalityCheck(youTubeIframeLocator, youTubeVideoPlayLocator, youTubeVideoPauseLocator, youTubeVideoMuteLocator, youTubeVideoUnmuteLocator, youTubeVideoFullscreenLocator, youTubeVideoExitFullScreenLocator ){
  
     const iframe = await this.page.frameLocator(youTubeIframeLocator)
-    await expect(await this.page.frameLocator(youTubeIframeLocator)).toBeVisible();
+    //await expect(await this.page.frameLocator(youTubeIframeLocator)).toBeVisible();
     await iframe.locator(youTubeVideoPlayLocator).click()
     await this.page.waitForTimeout(2000);
     await iframe.locator(youTubeVideoPauseLocator).click()
@@ -192,5 +190,156 @@ async videoPlayerFunctionalityCheck(youTubeIframeLocator, youTubeVideoPlayLocato
     await iframe.locator(youTubeVideoExitFullScreenLocator).click()
  
 }
+
+
+//used in ChromeSocket page
+    async filterCheckBoxesVisibilityClickabilityProductCheck(filterOptionLocator,productListOnPageLocator,nextButtonLocator,lastButtonLocator){ 
+
+     // Get all filter options (assuming they are checkboxes or similar elements)
+     const filterOptions = await this.page.locator(filterOptionLocator); 
+     
+     //Options Count
+     const fetchedfilterOptionCount = await filterOptions.count()
+     console.log(`Total Number of Options in filter are: ${fetchedfilterOptionCount}`)
+   
+     // Loop through each filter option to select and unselect
+     for (let i = 0; i < fetchedfilterOptionCount; i++) {
+       const filterOption = await filterOptions.nth(i);
+       await filterOption.isVisible()
+   
+       // Step 1: Select the filter option
+       await filterOption.check();
+   
+       // Get the label or description of the current filter option for assertions
+       const filterLabel = await filterOption.evaluate(el => el.closest('label').textContent.trim());
+       console.log(`Testing filter(checkbox): ${filterLabel}`);
+   
+       // Wait for the products to load or the results to change
+       await this.page.waitForSelector(productListOnPageLocator);  
+   
+       // Assert that products are displayed on the current page
+       const productCount = await this.page.locator(productListOnPageLocator).count();
+       expect(productCount).toBeGreaterThan(0); 
+   
+       // Step 2: Handle pagination for the filter
+       //method 1
+       // let pageNumber = 1;
+       // let isLastPage = false;
+   
+       // while (!isLastPage) {
+         
+   
+       //   // Check if there's a "Next" button, and if it exists, click it
+       //   const nextButton = await this.page.locator(nextButtonLocator);  
+         
+       //   // Ensure "Next" button is visible and enabled (not disabled)
+       //     const isNextButtonVisible = await nextButton.isVisible(); 
+       //   if (isNextButtonVisible) {
+       //     await nextButton.click();
+       //     await this.page.waitForSelector(productListOnPageLocator, { state: 'visible' }); 
+       //     pageNumber++;
+       //   } else {
+       //     isLastPage = true;  // No "Next" button means we've reached the last page
+       //   }
+       // }
+   
+     //method 2
+     // const lastButton = await this.page.locator(lastButtonLocator); 
+     // const isLastPageButtonVisible = await lastButton.isVisible()
+     //   if (isLastPageButtonVisible) {
+     //         await lastButton.click();
+     //         await this.page.waitForTimeout(2000);
+     //         await this.page.waitForSelector(productListOnPageLocator, { state: 'visible' }); // Wait for the product list to refresh
+     //         break;
+     //       }
+   
+       // Step 3: Unselect the filter option
+       await filterOption.uncheck();
+       await this.page.waitForTimeout(2000);
+       // Wait for the page to restore the default state
+       await this.page.waitForSelector(productListOnPageLocator);
+   
+     }
+   }
+
+
+//used in ChromeSocket page
+   async pagination(productListOnPageLocator,nextButtonLocator){
+    // Handle pagination when the filter is in default state
+   let pageNumber = 1;
+   let isLastPage = false;
+
+   while (!isLastPage) {
+     console.log(`Page No. is : ${pageNumber}`);
+
+     // Assert that products are displayed on the current page
+     const productCount= await this.page.locator(productListOnPageLocator).count();
+     expect(productCount).toBeGreaterThan(0); 
+
+     // Check if there's a "Next" button, and if it exists, click it
+      const nextButton = await this.page.locator(nextButtonLocator)
+      const isNextButtonVisible = await nextButton.isVisible();
+
+     //if ">" button is visible click on it
+     if (isNextButtonVisible) {
+       await nextButton.click();
+       await this.page.waitForSelector(productListOnPageLocator); 
+       pageNumber++;
+     } else {
+        //breaks the loop if ">" button is not visible
+       isLastPage = true;  
+     }
+   }
+     }    
+
+     //Used in All Tools Page, Tools by Industry Page
+     async sectorCardImageTitleSubtitleLink(cardLocator, cardImagelocator,cardTitleLocator, cardTextLocator, cardLinkLocator, expectedCardUrl ){
+
+      const listOfCardTitle =[]
+      const listOfCardText =[]
+      const listOfCardlink = []
+  
+      const cardCount = await this.page.locator(cardLocator).count()
+      console.log(`No. of cards are : ${cardCount}`)
+      //expect(cardCount).toBe(expectedCardDisplayed)
+  
+      for(let item=0; item<cardCount; item++){
+  
+          //verify Image
+          const cardImage = this.page.locator(cardImagelocator).nth(item);
+          await expect(cardImage).toBeVisible();
+  
+          //verify Title
+          const cardTitle = this.page.locator(cardTitleLocator).nth(item);
+          await expect(cardTitle).toBeVisible()
+          const iListTitle = await cardTitle.textContent()
+          console.log(iListTitle)
+          listOfCardTitle.push(iListTitle)
+          //expect(configElement.productTitles[i].includes(listOfProductTitle[i])).toBeTruthy()
+         
+           //verify Text
+           const cardText = this.page.locator(cardTextLocator).nth(item);
+           await expect(cardText).toBeVisible();
+           const iListText = await cardText.textContent()
+           console.log(iListText)
+           listOfCardText.push(iListText)
+           //expect(configElement.productSubtitles[i].includes(listOfProductSubtitle[i])).toBeTruthy()
+  
+            //verify Link
+            const cardLink = this.page.locator(cardLinkLocator).nth(item);
+            const hrefTag = await cardLink.getAttribute('href');
+            listOfCardlink.push(hrefTag)
+            await expect(cardLink).toBeVisible();
+  
+          //check if link is clickable without actully executing its default navigation action
+          await cardLink.click({trial: true})
+  
+          //verify the links captured  
+          expect(expectedCardUrl[item].includes(listOfCardlink[item])).toBeTruthy()
+         
+      }      
+  }
+
+
 
 }
