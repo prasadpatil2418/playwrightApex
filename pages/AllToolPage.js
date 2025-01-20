@@ -45,7 +45,7 @@ exports.AllToolPage = class AllToolPage{
               await sectorMenus.nth(eachMenu).click()
               const menuText = await sectorMenus.nth(eachMenu).textContent()
               console.log(`Sector Name is: ${menuText}`)
-             // expect (await this.page.locator(allToolObj.allSectorLocator[eachMenu])).toBeVisible()
+              await expect (this.page.locator(allToolObj.allSectorLocator).nth(eachMenu)).toBeVisible()
               await this.page.waitForTimeout(2000)
              }
           }

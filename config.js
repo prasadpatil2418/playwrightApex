@@ -271,3 +271,18 @@ export const transportationIndustryUrl= "https://dev-www.gearwrench.com/all-tool
 export const expIndustryUrl =[aerospaceIndustryUrl, agricultureIndustryUrl, automotiveIndustryUrl, dieselIndustryUrl,
     energyIndustryUrl, industrialIndustryUrl, technicianEducationIndustryUrl, transportationIndustryUrl]
 
+//*******************************************************        warranty form Page            ***************************************************************
+
+export const expThankYouMsg = "THANKS FOR REACHING OUT!"
+
+//*******************************************************        Automotive  Page            ***************************************************************
+
+export const expBannerTitleAutomotive = 'Automotive'
+export const expBannerTextAutomotive = 'When you work on vehicles, you depend on high quality hand tools for diagnostics, tune-ups, and major repairs. That’s why our GEARWRENCH automotive tools are made for speed, strength, and access. Explore top choices for automotive technicians and find tools to upgrade your toolbox.'
+export const expectedCardTitleAutomotive =['15 Piece Brake Service Set','27" Serpentine Belt Grabber Tool','Power Steering Pump Puller Set',
+    '4 Piece Bolt Biter™ Screw Extractor Set','10 Piece Bolt Biter™ Screw Extractor Set','16 Piece Bolt Biter™ Nut Extractor & Driver Set','4 Piece PITBULL Mixed Dual Material Plier Set','6 Piece PITBULL Dipped Handle Mixed Plier Set',
+    '3 Piece 1/2" Drive High-Strength Wheel Protector Impact Metric Socket Set','28 Piece 1/4" & 3/8" Drive Bolt Biter™ Impact Extraction Socket Set','4 Piece 1/4", 3/8" & 1/2" Drive 90-Tooth Flex Head Teardrop Ratchet Set',
+    '84 Piece 1/4", 3/8" & 1/2" Drive Hex/Ball End Hex/Tamper Proof Torx®/External Torx®/Torx® SAE/Metric Bit Set']
+
+export const expectedCardTokenAutomotive = ['41520','3684D','41560D','84787','84786','86171',
+    '82203-06','82204-06','84946','84784','81230T','80742']
