@@ -10,7 +10,7 @@ constructor(page){
 }
 
 async openAutomotivePage(){
-   await this.page.goto(process.env.AUTH_URL_AUTOMOTIVE)
+   await this.page.goto(process.env.BASE_URL + '/all-tools/automotive')
 
 }
 async headerPresent(){

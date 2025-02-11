@@ -11,7 +11,7 @@ exports.ResourcePage = class ResourcePage{
     }
 
     async openResourcePage(){
-      await this.page.goto(process.env.AUTH_URL_RESOUCES)
+      await this.page.goto(process.env.BASE_URL + '/resources')
     }
 
     async headerPresent(){

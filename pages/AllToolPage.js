@@ -2,7 +2,7 @@ import { expect, page } from "@playwright/test";
 import * as configElement from "../config.js"
 import * as allToolObj from "../pageobjects/allToolPageObject.js"
 import {baseClass} from "./baseClass.js";
-
+require('dotenv').config();
 
 
 exports.AllToolPage = class AllToolPage{
@@ -12,7 +12,7 @@ exports.AllToolPage = class AllToolPage{
     }
 
     async openAllToolPage(){
-        await this.page.goto(process.env.AUTH_URL_ALLTOOLS)
+      await this.page.goto(process.env.BASE_URL + '/all-tools')
       }
   
       async headerPresent(){

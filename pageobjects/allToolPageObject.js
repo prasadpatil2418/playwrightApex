@@ -6,7 +6,6 @@ export const breadCrumb = 'Breadcrumb'
 export const pageName = 'All Tools'
 
 //banner elelment
-
 export const allToolBannerImage ="article[id='paragraph-8531'] picture"
 export const allToolBannerTitle = "//h1[normalize-space()='All Tools']"
 export const allToolBannerText = ".field.field--name-field-attribution.field--type-string.field--label-hidden.field__item"

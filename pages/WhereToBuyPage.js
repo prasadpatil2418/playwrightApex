@@ -12,7 +12,7 @@ exports.WhereToBuyPage = class WhereToBuyPage{
     }
 
     async openWhereToBuyPage(){
-        await this.page.goto(process.env.AUTH_URL_WHERETOBUY)
+        await this.page.goto(process.env.BASE_URL + '/where-to-buy')
       }
   
       async headerPresent(){

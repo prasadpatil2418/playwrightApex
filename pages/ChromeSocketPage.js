@@ -10,7 +10,7 @@ exports.ChromeSocketPage = class ChromeSocketPage{
     }
 
     async openChromeSocketPage(){
-        await this.page.goto(process.env.AUTH_URL_CHROMESOCKET)
+        await this.page.goto(process.env.BASE_URL + '/all-tools/ratchets-sockets/chrome-sockets')
       }
   
       async headerPresent(){

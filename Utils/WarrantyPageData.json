@@ -1,0 +1,16 @@
+{
+    "searchItemNo" : "Tool",
+     "EnterSellerName" : "Amazon",
+     "SendMessage" : "This message is for testing purpose",
+     "FirstName" : "Lokesh",
+     "LastName": "Swami",
+     "EmailAddress" :"lokesh.swami@materialplus.io",
+     "PhoneNumber":"9865467835",
+     "StreetAddress" : "Address",
+     "City" : "Pune",
+     "ZipCode" : "437890",
+     "Country" : "Canada",
+     "Province" : "Manitoba"
+
+
+}

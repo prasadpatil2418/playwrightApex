@@ -10,7 +10,7 @@ exports.StrikingAndStruckPage = class StrikingAndStruckPage{
     }
 
     async openStrikingAndStruckPage(){
-        await this.page.goto(process.env.AUTH_URL_STRIKINGANDSTRUCK)
+        await this.page.goto(process.env.BASE_URL ='/all-tools/hand-tools/striking-struck')
       }
   
       async headerPresent(){

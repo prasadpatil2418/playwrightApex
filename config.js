@@ -1,9 +1,10 @@
+require('dotenv').config()
+
 //*********************************************************************** Header ******************************************************************************************** */
 //used: method2
-export const homePageURL = 'https://dev-www.gearwrench.com/'
-
+export const homePageURL = process.env.BASE_URL
 //used: method3
-export const diagnosticPageUrl = 'https://dev-www.gearwrench.com/featured-tools/diagnostics'
+export const diagnosticPageUrl = process.env.BASE_URL+'featured-tools/diagnostics'
 export const megamodPageUrl = 'https://dev-www.gearwrench.com/featured-tools/megamod-mechanics-hand-tool-sets'
 export const modularToolSetsPageUrl = 'https://dev-www.gearwrench.com/featured-tools/modular-tool-sets'
 export const autoShopsEquipmentPageUrl = 'https://dev-www.gearwrench.com/featured-tools/gearwrench-auto-shop-equipment'
@@ -286,3 +287,26 @@ export const expectedCardTitleAutomotive =['15 Piece Brake Service Set','27" Ser
 
 export const expectedCardTokenAutomotive = ['41520','3684D','41560D','84787','84786','86171',
     '82203-06','82204-06','84946','84784','81230T','80742']
+
+
+    // ******************************************************* PDP Lighting Page ***************************************************************
+
+export const expectedProductTitle = '8-1/2" Flex Head Rechargeable Light'
+export const expectedRelatedProductCardDisplayed = 3
+
+export const expectedrelatedProductCardTitles = ["500 Lumen Rechargeable Ultra-Thin Flex-Head Work Light",
+                                         "125 Lumen Rechargeable Penlight",
+                                         "1000 Lumen Rechargeable Area Light with AC Adapter"]
+
+export const expectedrelatedProductCardSubText = ["The new ultra-thin flex-head lights from GearWrench feature 360° range of motion making this the ide",
+                                          "Durable and compact, the GEARWRENCH 6-inch long aluminum penlight delivers a bright and powerful 125",
+                                          "The full line of GEARWRENCH professional rechargeable lighting includes products for every automotiv"]
+
+export const expectedrelatedProductCardSKUId = ['83135', '83122', '83124']
+
+
+export const expectedRelatedProductCardUrl = ["https://dev-www.gearwrench.com/all-tools/shop-equipment-tool-sets/lighting/83135-500-lumen-rechargeable-ultra-thin-flex-head-work-light",
+                                              "https://dev-www.gearwrench.com/all-tools/shop-equipment-tool-sets/lighting/83122-125-lumen-rechargeable-penlight",
+                                              "https://dev-www.gearwrench.com/all-tools/shop-equipment-tool-sets/lighting/83124-1000-lumen-rechargeable-area-light-ac-adapter"]
+ 
+ 

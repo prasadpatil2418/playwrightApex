@@ -46,3 +46,7 @@ export const privacyPolicyCheckBoxLocator="label[for='edit-warranty-and-privacy-
 export const subscribeEmailCheckBoxLocator="label[for='edit-email-opt-in']"
 export const sumbitBtnLocator="//input[@id='edit-actions-submit']"
 export const thankYouLocator="tbody tr:first-child strong"
+
+export const countryAllDropdownLocator = "select[class='country form-select']"
+export const provinceAllDropdownLocator = "select[class='administrative-area form-select required']"
+export const personalInfoLocator = "//div[@id='edit-personal-information-wrapper']"

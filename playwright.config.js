@@ -43,20 +43,32 @@ module.exports = defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
 
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: {
+        browserName: process.env.BROWSER,  // Use the browser defined in the environment variable
+        headless: process.env.HEADLESS === 'true',  // Use headless mode based on environment variable
+        // Additional browser-specific settings can be added here
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
+        trace: 'retain-on-failure',
+      },
     },
+    
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
+
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
   ],
 });

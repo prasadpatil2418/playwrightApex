@@ -14,7 +14,7 @@ exports.SupportPage = class SupportPage{
 
     //method 1  **************************************************************************************************************************************
     async openPageOnBrowsers(){
-        await this.page.goto(process.env.AUTH_URL_SUPPORT) 
+        await this.page.goto(process.env.BASE_URL + '/support') 
         await this.page.waitForLoadState()
     }
 

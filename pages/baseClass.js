@@ -149,6 +149,7 @@ exports.baseClass = class baseClass {
       console.log(iListTitle)
       listOfCardTitle.push(iListTitle)
       //expect(configElement.productTitles[i].includes(listOfProductTitle[i])).toBeTruthy()
+     
 
       //verify Subtitle
       const cardText = this.page.locator(cardTextLocator).nth(item);
@@ -168,7 +169,6 @@ exports.baseClass = class baseClass {
       await cardLink.click({ trial: true })
 
       //verify the links captured
-
       expect(expectedCardUrl[item].includes(listOfCardlink[item])).toBeTruthy()
 
     }
@@ -316,6 +316,7 @@ exports.baseClass = class baseClass {
       console.log(iListTitle)
       listOfCardTitle.push(iListTitle)
       //expect(configElement.productTitles[i].includes(listOfProductTitle[i])).toBeTruthy()
+      // await expect(listOfCardTitle[item]).toBe(expectedCardTitle[item])
 
       //verify Text
       const cardText = this.page.locator(cardTextLocator).nth(item);
@@ -324,6 +325,7 @@ exports.baseClass = class baseClass {
       console.log(iListText)
       listOfCardText.push(iListText)
       //expect(configElement.productSubtitles[i].includes(listOfProductSubtitle[i])).toBeTruthy()
+      //await expect(listOfCardText[item]).toBe(expectedCardText[item])
 
       //verify Link
       const cardLink = this.page.locator(cardLinkLocator).nth(item);
@@ -340,6 +342,29 @@ exports.baseClass = class baseClass {
     }
   }
 
+  // Used In Warranty Form Page
+  async dropdownSelection(DropdownLocator, DropdownValue) {
 
+    //Locate the Dropdown
+    const selectLocator = this.page.locator(DropdownLocator);
 
+    //Get all the Option Elements Inside the Dropdown
+    const options = await selectLocator.locator('option').all();
+    const optionsCount = await options.length
+    console.log(`Found ${optionsCount} options in dropdown`)
+
+    //Loop through each Option and Select it
+
+    for (let i = 0; i < options.length; i++) {
+      const optionText = await options[i].innerText();
+      if (optionText === DropdownValue) {
+
+        const optionValue = await options[i].getAttribute('value');
+        await selectLocator.selectOption({ value: optionValue });
+        console.log(`Selected country with value: ${optionValue}`);
+      }
+      await this.page.waitForTimeout(1000);
+    }
+
+  }
 }

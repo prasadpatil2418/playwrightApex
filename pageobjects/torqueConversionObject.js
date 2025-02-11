@@ -1,0 +1,23 @@
+export const header = ".region-header__content.region-header__content-large"
+export const breadcrumb = "nav[role='navigation'] ol"
+export const torqueConversionProcessLocator = "div[class='clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item'] p"
+export const convertNowCTALocator = "a[href='/torque-conversion#convertnow']"
+export const heroBannerLocator = "a[href='/torque-conversion#convertnow']"
+export const calculatorStepTitleLocator = "//header[normalize-space()='How to use the Torque Conversion Calculator']"
+export const calculatorStepImageLocator = "[class='component-step__title-wrapper'] header"
+export const calculatorStepSubtextLocator = "[class='component-step__content'] p"
+
+export const calculatorFormInputHeadingLocator = "[class='block-torque-conversion-calculator__form-input-heading']"
+export const calculatorFormMeasureHeadingLocator = "[class='block-torque-conversion-calculator__form-measure-heading']"
+export const calculatorFormInputLocator = "input[id='conversionInput']"
+export const calculatorFormMeasureDropdownLocator = "select[id='conversipnType']"
+export const calculatorFormButtonConvertLocator = "input[id='block-torque-conversion-calculator-button-convert']"
+export const calculatorFormButtonResetLocator = "[id='block-torque-conversion-calculator-button-reset']"
+
+export const measuringSystemTitleLocator = "div[class='block-torque-conversion-calculator__results-copy'] h3"
+export const measuringSystemUnitLocator = "div[class='block-torque-conversion-calculator__results-copy'] p"
+
+export const resultTableLocator = "[class='block-torque-conversion-calculator__results']"
+export const tableColumnLocator = "[class='block-torque-conversion-calculator__results'] tbody tr th"
+export const tableRowLocator = "[class='block-torque-conversion-calculator__results'] tbody tr "
+export const torqueConversionProcessTextLocator = "div[class='component-content__content'] p"

@@ -12,7 +12,7 @@ exports.WarrantyFormPage = class WarrantyFormPage{
     }
 
     async openWarrantyFormPage(){
-        await this.page.goto(process.env.AUTH_URL_WARRANTYFORM)
+        await this.page.goto(process.env.BASE_URL + '/warranty-replacement-form')
       }
   
       async headerPresent(){
@@ -142,4 +142,12 @@ exports.WarrantyFormPage = class WarrantyFormPage{
         await this.page.waitForTimeout(1000)
         await expect (this.page.locator(warrantyFormObj.thankYouLocator)).toContainText(configElement.expThankYouMsg)
       }
+
+      async personalInfoSectionCountryAndProvinceSelection(Country,Province){
+
+       await this.page.locator(warrantyFormObj.personalInfoLocator).click()
+        await this.baseMethod.dropdownSelection(warrantyFormObj.countryAllDropdownLocator,Country);
+        await this.page.waitForTimeout(3000);
+        await this.baseMethod.dropdownSelection(warrantyFormObj.provinceAllDropdownLocator,Province)
+    }
     }

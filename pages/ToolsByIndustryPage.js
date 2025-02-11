@@ -12,7 +12,7 @@ exports.ToolsByIndustryPage = class ToolsByIndustryPage{
     }
 
     async openToolsByIndustryPage(){
-        await this.page.goto(process.env.AUTH_URL_TOOLSBYINDUSTRY)
+        await this.page.goto(process.env.BASE_URL + '/all-tools/tools-industry')
       }
   
       async headerPresent(){
